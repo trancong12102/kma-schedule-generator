@@ -23,8 +23,8 @@ $ mkdir tokens
 <p>I’ve forgot to add my Google drive credentials and tokens to .gitignore so i deleted all my commits before.<br>
 There are some major updates</p>
 <ul>
-<li><strong>0.0.21a</strong> to <strong>0.0.21b</strong>: resolved IDM download problem by archived generated file on localhost and sent the download link to client instead of sent blob data directly.</li>
-<li><strong>0.0.21b</strong> to <strong>1.0.21</strong>: archived generated file on Google drive instead of localhost.</li>
+<li><strong>v0.0.21a</strong> to <strong>v0.0.21b</strong>: resolved IDM download problem by archived generated file on localhost and sent the download link to client instead of sent blob data directly.</li>
+<li><strong>v0.0.21b</strong> to <strong>v1.0.21</strong>: archived generated file on Google drive instead of localhost.</li>
 </ul>
 <h1 id="creator">Creator</h1>
 <p><strong>Trần Công</strong></p>
