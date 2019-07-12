@@ -1,0 +1,21 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0" metadata-complete="true">
+    <display-name>KMA Schedule Generator</display-name>
+    <servlet>
+        <servlet-name>ScheduleGeneratingServlet</servlet-name>
+        <servlet-class>org.lonewolf2110.servlets.ScheduleGeneratingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ScheduleCleanServlet</servlet-name>
+        <servlet-class>org.lonewolf2110.servlets.ScheduleCleanServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ScheduleGeneratingServlet</servlet-name>
+        <url-pattern>/schedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ScheduleCleanServlet</servlet-name>
+        <url-pattern>/clean</url-pattern>
+    </servlet-mapping>
+</web-app>
