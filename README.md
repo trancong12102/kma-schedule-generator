@@ -23,7 +23,7 @@ $ mkdir tokens
 <p>I’ve forgot to add my Google drive credentials and tokens to .gitignore so i deleted all my commits before <strong>v1.0.21</strong>.<br>
 There are some major updates</p>
 <ul>
-<li><strong>v1.0.21</strong> to <strong>v1.1.21</strong>: load time has been significantly reduced by using JSoup instead of HtmlUnit to get schedule excel file from KMA server.</li>
+<li><strong>v1.0.21</strong> to <strong>v1.1.21</strong>: load time has been significantly reduced by using <strong>JSoup</strong> instead of <strong>HtmlUnit</strong> to get schedule excel file from KMA server.</li>
 <li><strong>v0.0.21b</strong> to <strong>v1.0.21</strong>: archived generated file on Google drive instead of localhost.</li>
 <li><strong>v0.0.21a</strong> to <strong>v0.0.21b</strong>: resolved IDM download problem by archived generated file on localhost and sent the download link to client instead of sent blob data directly.</li>
 </ul>
