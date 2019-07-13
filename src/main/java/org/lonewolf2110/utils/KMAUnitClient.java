@@ -8,7 +8,8 @@ import org.lonewolf2110.enums.ResponseStatus;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class KMAClient implements AutoCloseable {
+@Deprecated
+public class KMAUnitClient implements AutoCloseable {
     private final String KMA_LOGIN_PAGE_URL = "http://115.146.127.72/CMCSoft.IU.Web.Info/Login.aspx";
     private final String KMA_LOGIN_PAGE_TITLE = ".: Đăng nhập :.";
     private final String KMA_HOMEPAGE_TITLE = ".: Hệ thống đăng ký học :.";
@@ -20,7 +21,7 @@ public class KMAClient implements AutoCloseable {
     private InputStream inputStream;
     private String semester;
 
-    public KMAClient() {
+    public KMAUnitClient() {
         this.webClient = new WebClient(BrowserVersion.CHROME);
     }
 

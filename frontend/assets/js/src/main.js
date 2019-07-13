@@ -105,10 +105,15 @@ $("#login-form").handle("submit", (e) => {
     if (result.value) {
       const response = result.value;
 
+      if (response.status === 204) {
+        handleAjaxWarning();
+        return;
+      }
+
       if (response.status === 200) {
-        ajaxSuccess(response);
+        handleAjaxSuccess(response);
       } else {
-        ajaxFailed(response);
+        handleAjaxFailed(response);
       }
     }
   });
@@ -117,7 +122,17 @@ $("#login-form").handle("submit", (e) => {
 });
 
 //------------------------------------------------------------------------------------------------------
-function ajaxSuccess(response) {
+function handleAjaxWarning() {
+  Swal.fire({
+    type: 'warning',
+    title: 'Warning',
+    text: 'Bạn chưa đăng ký học cho học kỳ này',
+    confirmButtonColor: COLOR_RED,
+    confirmButtonText: 'Đóng',
+  });
+}
+
+function handleAjaxSuccess(response) {
   Swal.fire({
     type: 'success',
     title: 'Thành công',
@@ -125,15 +140,16 @@ function ajaxSuccess(response) {
     confirmButtonColor: COLOR_PRIMARY,
     confirmButtonText: 'Đóng',
   }).then(() => {
-    const url = response.data.webViewLink;
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('target', '_blank');
-    link.click();
+    new Promise(() => {
+      setTimeout(() => {
+        const url = response.data.webViewLink;
+        window.open(url, "_blank");
+      }, 1000);
+    });
   });
 }
 
-function ajaxFailed(response) {
+function handleAjaxFailed(response) {
   const status = response.status;
   let text = 'Lỗi không xác định!<br>Vui lòng thử lại sau';
 
@@ -181,7 +197,17 @@ function $q(selector) {
 }
 
 // Handle animation functions
-function addAnimation(element, animation) {
+function addAnimation(element, animation, hover = false) {
+  if (hover) {
+    element.classList.forEach(value => {
+      if (value.startsWith("pb_animated")) {
+        element.classList.remove(value);
+      }
+    });
+
+    element.classList.add("pb_animated_hover");
+  }
+
   element.classList.add('animated', animation);
 
   function handleAnimationEnd() {
@@ -197,13 +223,23 @@ function handleAppearAnimation() {
 
   $q('.pb_animated').forEach(element => {
     let animation = '';
+    let hover = false;
 
     element.classList.forEach(value => {
       if (value.indexOf(PREFIX) !== -1) {
         animation = value.replace(PREFIX, '');
       }
+
+      if (value === "pb_hover") {
+        hover = true;
+      }
     });
 
     addAnimation(element, animation);
+    if (hover) {
+      element.addEventListener("mouseover", () => {
+        addAnimation(element, animation, true);
+      })
+    }
   });
 }

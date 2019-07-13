@@ -16,4 +16,14 @@ public class StringUtils {
 
         return stringList;
     }
+
+    public static String reverseSemester(String source) {
+        List<String> wordList = split(source, "_");
+
+        if (wordList.size() == 3) {
+            return wordList.get(2) + "_" + wordList.get(0) + "_" + wordList.get(1);
+        }
+
+        return source;
+    }
 }

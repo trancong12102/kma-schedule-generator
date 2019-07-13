@@ -62,15 +62,19 @@ body {
   color: white;
 }
 
-.pb_animated, .pb_animated_slideInLeft, .pb_animated_fadeIn,
-.pb_animated_fadeInLeft,
+.pb_animated, .pb_animated_hover, .pb_animated_fadeInLeft,
 .pb_animated_pulse,
 .pb_animated_rubberBand,
+.pb_animated_slideInLeft,
 .pb_animated_slideInRight,
 .pb_animated_bounceInRight,
 .pb_animated_bounceInDown {
   animation-duration: 2s;
   animation-delay: 1s;
+}
+
+.pb_animated_fadeInLeft {
+  animation-duration: 1s;
 }
 
 .pb_animated_slideInLeft {
@@ -84,6 +88,11 @@ body {
 
 .pb_dog {
   margin: 5px;
+}
+
+.pb_animated_hover {
+  animation-duration: 1s;
+  animation-delay: 0s;
 }
 
 /*# sourceMappingURL=landing-2.css.map */

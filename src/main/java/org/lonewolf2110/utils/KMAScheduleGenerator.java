@@ -46,12 +46,12 @@ public class KMAScheduleGenerator {
                 generatePDF();
                 break;
             case PLAIN_TEXT:
-                generateText();
+                generatePlainText();
                 break;
         }
     }
 
-    private void generateText() {
+    private void generatePlainText() {
         PrintWriter printWriter = new PrintWriter(outputStream);
         String pattern = "dd/MM/yyyy";
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern(pattern);
@@ -62,10 +62,12 @@ public class KMAScheduleGenerator {
             printWriter.println(String.format("Từ %s đến %s", dateRange.getStart().format(dtf), dateRange.getEnd().format(dtf)));
 
             for (Weekday weekday : Weekday.values()) {
+                List<SubjectPeriod> subjectPeriodList = sheetData.getSubjectPeriodList(weekday);
+
                 printWriter.println("---------------------------------------------");
                 printWriter.println(weekday.getText());
 
-                for (SubjectPeriod subjectPeriod : sheetData.getSubjectPeriodList(weekday)) {
+                for (SubjectPeriod subjectPeriod : subjectPeriodList) {
                     ClassPeriodRange pR = subjectPeriod.getClassPeriodRange();
                     String classroom = subjectPeriod.getClassroom();
                     String subject = subjectPeriod.getSubject();
@@ -102,13 +104,15 @@ public class KMAScheduleGenerator {
             );
 
             for (Weekday weekday : Weekday.values()) {
+                List<SubjectPeriod> subjectPeriodList = sheetData.getSubjectPeriodList(weekday);
+
                 document.add(
                         new Paragraph(weekday.getText())
                                 .setFont(fontRegular)
                                 .setUnderline()
                 );
 
-                for (SubjectPeriod subjectPeriod : sheetData.getSubjectPeriodList(weekday)) {
+                for (SubjectPeriod subjectPeriod : subjectPeriodList) {
                     ClassPeriodRange range = subjectPeriod.getClassPeriodRange();
                     String classroom = subjectPeriod.getClassroom() + " ";
                     String subject = subjectPeriod.getSubject();

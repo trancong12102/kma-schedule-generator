@@ -4613,10 +4613,15 @@ $("#login-form").handle("submit", function (e) {
     if (result.value) {
       var response = result.value;
 
+      if (response.status === 204) {
+        handleAjaxWarning();
+        return;
+      }
+
       if (response.status === 200) {
-        ajaxSuccess(response);
+        handleAjaxSuccess(response);
       } else {
-        ajaxFailed(response);
+        handleAjaxFailed(response);
       }
     }
   });
@@ -4624,7 +4629,17 @@ $("#login-form").handle("submit", function (e) {
   e.preventDefault();
 }); //------------------------------------------------------------------------------------------------------
 
-function ajaxSuccess(response) {
+function handleAjaxWarning() {
+  _sweetalert["default"].fire({
+    type: 'warning',
+    title: 'Warning',
+    text: 'Bạn chưa đăng ký học cho học kỳ này',
+    confirmButtonColor: COLOR_RED,
+    confirmButtonText: 'Đóng'
+  });
+}
+
+function handleAjaxSuccess(response) {
   _sweetalert["default"].fire({
     type: 'success',
     title: 'Thành công',
@@ -4632,15 +4647,16 @@ function ajaxSuccess(response) {
     confirmButtonColor: COLOR_PRIMARY,
     confirmButtonText: 'Đóng'
   }).then(function () {
-    var url = response.data.webViewLink;
-    var link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('target', '_blank');
-    link.click();
+    new Promise(function () {
+      setTimeout(function () {
+        var url = response.data.webViewLink;
+        window.open(url, "_blank");
+      }, 1000);
+    });
   });
 }
 
-function ajaxFailed(response) {
+function handleAjaxFailed(response) {
   var status = response.status;
   var text = 'Lỗi không xác định!<br>Vui lòng thử lại sau';
 
@@ -4689,6 +4705,17 @@ function $q(selector) {
 
 
 function addAnimation(element, animation) {
+  var hover = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  if (hover) {
+    element.classList.forEach(function (value) {
+      if (value.startsWith("pb_animated")) {
+        element.classList.remove(value);
+      }
+    });
+    element.classList.add("pb_animated_hover");
+  }
+
   element.classList.add('animated', animation);
 
   function handleAnimationEnd() {
@@ -4703,12 +4730,23 @@ function handleAppearAnimation() {
   var PREFIX = 'pb_animated_';
   $q('.pb_animated').forEach(function (element) {
     var animation = '';
+    var hover = false;
     element.classList.forEach(function (value) {
       if (value.indexOf(PREFIX) !== -1) {
         animation = value.replace(PREFIX, '');
       }
+
+      if (value === "pb_hover") {
+        hover = true;
+      }
     });
     addAnimation(element, animation);
+
+    if (hover) {
+      element.addEventListener("mouseover", function () {
+        addAnimation(element, animation, true);
+      });
+    }
   });
 }
 

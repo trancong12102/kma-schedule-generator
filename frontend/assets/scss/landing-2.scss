@@ -1,86 +1,99 @@
 @import "mixins/custom-mixins";
 body {
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 .bg-light {
-	background-color: lighten(#c8d1e6, 12%)!important;
+    background-color: lighten(#c8d1e6, 12%)!important;
 }
 .pb_icon-gradient {
-	&:before {
-  		@include pb_text-gradient(#665fee, #27c2de, 45deg)
-  }
+    &:before {
+        @include pb_text-gradient(#665fee, #27c2de, 45deg)
+    }
 }
 .pb_slant-light,
 .pb_slant-white {
-	position: relative;
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: -100px;
-		left: -50px;
-		height: 200px;
-		width: 130%;
-		background-color: lighten(#c8d1e6, 12%);
-		transform: rotate(-4deg);
-		z-index: 10;
-	}
-	&.pb_slant-reverse {
-		&:after {
-			transform: rotate(4deg);	
-			left: -100px;
-			bottom: -140px;
-		}
-	}
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: -50px;
+        height: 200px;
+        width: 130%;
+        background-color: lighten(#c8d1e6, 12%);
+        transform: rotate(-4deg);
+        z-index: 10;
+    }
+    &.pb_slant-reverse {
+        &:after {
+            transform: rotate(4deg);
+            left: -100px;
+            bottom: -140px;
+        }
+    }
 }
 .pb_slant-white {
-	&:after {
-		background-color: #fff;
-	}
+    &:after {
+        background-color: #fff;
+    }
 }
 
 .pb_section {
-	padding: 10em 0;
+    padding: 10em 0;
 }
 
 .pb_cover_v3, .pb_xl_py_cover {
-	a {
-		color: rgba(255,255,255,.5);
-		border-bottom: 2px solid transparent;
-		&:hover {
-			color: rgba(255,255,255,1);
-			border-bottom: 2px solid rgba(255,255,255,1);
-		}
-	}
-	.btn {
-		color: rgba(255,255,255,1);	
-	}
+    a {
+        color: rgba(255,255,255,.5);
+        border-bottom: 2px solid transparent;
+        &:hover {
+            color: rgba(255,255,255,1);
+            border-bottom: 2px solid rgba(255,255,255,1);
+        }
+    }
+    .btn {
+        color: rgba(255,255,255,1);
+    }
 }
 
 .pb_animated {
-	animation-duration: 2s;
-	animation-delay: 1s;
+    animation-duration: 2s;
+    animation-delay: 1s;
 }
 
-.pb_animated_fadeIn,
 .pb_animated_fadeInLeft,
 .pb_animated_pulse,
 .pb_animated_rubberBand,
+.pb_animated_slideInLeft,
 .pb_animated_slideInRight,
 .pb_animated_bounceInRight,
 .pb_animated_bounceInDown {
-	@extend .pb_animated;
+    @extend .pb_animated;
+}
+
+.pb_animated_fadeInLeft {
+    animation-duration: 1s;
 }
 
 .pb_animated_slideInLeft {
-	@extend .pb_animated;
-	animation-duration: 1s;
+    animation-duration: 1s;
 }
 
 .pb_animated_bounce {
-	animation-duration: 3s;
-	animation-delay: 2s;
+    animation-duration: 3s;
+    animation-delay: 2s;
 }
 
 .pb_dog {
-	margin: 5px;
+    margin: 5px;
+}
+
+.pb_hover {
+
+}
+
+.pb_animated_hover {
+    @extend .pb_animated;
+    animation-duration: 1s;
+    animation-delay: 0s;
 }
