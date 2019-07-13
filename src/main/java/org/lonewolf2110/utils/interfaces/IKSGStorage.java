@@ -1,4 +1,4 @@
-package org.lonewolf2110.utils;
+package org.lonewolf2110.utils.interfaces;
 
 import com.google.api.services.drive.model.File;
 import org.lonewolf2110.enums.FileType;

@@ -1,4 +1,4 @@
-package org.lonewolf2110.utils;
+package org.lonewolf2110.utils.kma;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;

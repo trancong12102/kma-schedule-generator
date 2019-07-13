@@ -4,10 +4,14 @@ import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.lonewolf2110.enums.FileType;
-import org.lonewolf2110.models.RequestEntity;
-import org.lonewolf2110.models.ResponseEntity;
+import org.lonewolf2110.models.entity.RequestEntity;
+import org.lonewolf2110.models.entity.ResponseEntity;
 import org.lonewolf2110.models.SheetData;
 import org.lonewolf2110.utils.*;
+import org.lonewolf2110.utils.kma.KMAScheduleGenerator;
+import org.lonewolf2110.utils.kma.KMAScheduleReader;
+import org.lonewolf2110.utils.kma.KMASoupClient;
+import org.lonewolf2110.utils.kma.KSGStorage;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -60,34 +64,6 @@ public class ScheduleGeneratingServlet extends HttpServlet {
 
         InputStream inputStream = client.getInputStream();
         String semester = StringUtils.reverseSemester(client.getSemester());
-
-        /*
-        // Using HtmlUnit instead of JSoup
-        InputStream inputStream;
-        String semester;
-
-        try (KMAUnitClient client = new KMAUnitClient()) {
-            ResponseStatus status = client.getScheduleAsStream(username, password);
-
-            if (status == ResponseStatus.UNAUTHORIZED) {
-                // UNAUTHORIZED
-                response.sendError(401);
-                return;
-            }
-
-            if (status == ResponseStatus.INTERNAL_SERVER_ERROR) {
-                // KMA Server Error
-                response.sendError(503);
-                return;
-            }
-
-            inputStream = client.getInputStream();
-            semester = client.getSemester();
-        } catch (Exception e) {
-            //Server Error
-            response.sendError(500);
-            return;
-        }*/
 
         Instant end = Instant.now();
         Duration duration = Duration.between(start, end);

@@ -1,4 +1,4 @@
-package org.lonewolf2110.utils;
+package org.lonewolf2110.utils.interfaces;
 
 import org.lonewolf2110.enums.FileType;
 
@@ -7,5 +7,6 @@ import java.io.OutputStream;
 
 public interface IKMAScheduleGenerator {
     void generate(FileType fileType) throws IOException;
+
     void setOutputStream(OutputStream outputStream);
 }

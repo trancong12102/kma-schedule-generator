@@ -1,4 +1,4 @@
-package org.lonewolf2110.models;
+package org.lonewolf2110.models.entity;
 
 public class ResponseEntity {
     private String webViewLink;

@@ -1,4 +1,4 @@
-package org.lonewolf2110.utils;
+package org.lonewolf2110.utils.interfaces;
 
 import org.lonewolf2110.models.SheetData;
 
@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface IKMAScheduleReader {
     List<SheetData> getWorkbookData();
+
     void read(InputStream inputStream) throws IOException;
 }

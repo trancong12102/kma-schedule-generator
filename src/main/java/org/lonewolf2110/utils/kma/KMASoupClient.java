@@ -1,4 +1,4 @@
-package org.lonewolf2110.utils;
+package org.lonewolf2110.utils.kma;
 
 import com.google.common.io.ByteSource;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -6,14 +6,14 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.FormElement;
-import org.lonewolf2110.utils.interfaces.IKMASoupClient;
+import org.lonewolf2110.utils.interfaces.IKMAClient;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-public class KMASoupClient implements IKMASoupClient {
+public class KMASoupClient implements IKMAClient {
     private static final String LOGIN_PAGE_TITLE = ".: Đăng nhập :.";
     private static final String HOMEPAGE_TITLE = ".: Hệ thống đăng ký học :.";
 
@@ -93,12 +93,10 @@ public class KMASoupClient implements IKMASoupClient {
         return HttpServletResponse.SC_OK;
     }
 
-    @Override
     public InputStream getInputStream() {
         return inputStream;
     }
 
-    @Override
     public String getSemester() {
         return semester;
     }

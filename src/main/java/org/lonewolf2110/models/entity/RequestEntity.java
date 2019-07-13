@@ -1,4 +1,4 @@
-package org.lonewolf2110.models;
+package org.lonewolf2110.models.entity;
 
 public class RequestEntity {
     private String username, password;
