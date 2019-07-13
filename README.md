@@ -12,7 +12,7 @@ $ npm run dist
 $ ./build.sh
 </code></pre>
 <h1 id="google-drive-api-setup">Google Drive API setup</h1>
-<p>Download file <strong>credentials.json</strong> from google api console to <strong>src/main/resources/gdrive</strong></p>
+<p>Download file <strong>credentials.json</strong> from google api console and copy to <strong>src/main/resources/gdrive</strong></p>
 <pre><code>$ cd src/main/resources
 $ mkdir gdrive &amp;&amp; cd gdrive
 $ cp ~/Downloads/credentials.json credentials.json

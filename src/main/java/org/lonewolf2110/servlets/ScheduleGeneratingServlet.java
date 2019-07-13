@@ -122,20 +122,6 @@ public class ScheduleGeneratingServlet extends HttpServlet {
         duration = Duration.between(start, end);
         System.out.println("Get schedule data list in " + duration.toMillis() + " milliseconds");
 
-        //------------------------------------------------------------------------------
-        // Temp path
-
-        String tempPath = getServletContext().getRealPath("") + TEMP_DIRECTORY_PATH;
-        File tempDir = new File(tempPath);
-
-        if (!tempDir.exists()) {
-            if (!tempDir.mkdirs()) {
-                // Internal Server Error
-                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                return;
-            }
-        }
-
         //----------------------------------------------------------------------------------
         // Create folder on Google drive and get webview link
 
@@ -161,6 +147,20 @@ public class ScheduleGeneratingServlet extends HttpServlet {
         end = Instant.now();
         duration = Duration.between(start, end);
         System.out.println("Get parent webview link in " + duration.toMillis() + " milliseconds");
+
+        //------------------------------------------------------------------------------
+        // Temp path
+
+        String tempPath = getServletContext().getRealPath("") + TEMP_DIRECTORY_PATH;
+        File tempDir = new File(tempPath);
+
+        if (!tempDir.exists()) {
+            if (!tempDir.mkdirs()) {
+                // Internal Server Error
+                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                return;
+            }
+        }
 
         //-------------------------------------------------------------------------------------
         // Generate schedule file and upload to Google drive
