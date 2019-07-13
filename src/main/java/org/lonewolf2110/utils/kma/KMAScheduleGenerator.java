@@ -19,24 +19,25 @@ import org.lonewolf2110.models.ClassPeriodRange;
 import org.lonewolf2110.models.DateRange;
 import org.lonewolf2110.models.SheetData;
 import org.lonewolf2110.models.SubjectPeriod;
+import org.lonewolf2110.utils.interfaces.IKMAScheduleGenerator;
 
 import java.io.*;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 
-public class KMAScheduleGenerator {
+public class KMAScheduleGenerator implements IKMAScheduleGenerator {
+    private static final String FONT_REGULAR_PATH = "font/Open_Sans/OpenSans-Regular.ttf";
+    private static final String FONT_BOLD_PATH = "font/Open_Sans/OpenSans-Bold.ttf";
+
     private OutputStream outputStream;
     private List<SheetData> sheetDataList;
-
-    public KMAScheduleGenerator(List<SheetData> sheetDataList, OutputStream outputStream) {
-        this.sheetDataList = sheetDataList;
-        this.outputStream = outputStream;
-    }
 
     public KMAScheduleGenerator(List<SheetData> sheetDataList) {
         this.sheetDataList = sheetDataList;
     }
 
+    @Override
     public void generate(FileType fileType) throws IOException {
         switch (fileType) {
             case EXCEL:
@@ -49,6 +50,11 @@ public class KMAScheduleGenerator {
                 generatePlainText();
                 break;
         }
+    }
+
+    @Override
+    public void setOutputStream(OutputStream outputStream) {
+        this.outputStream = outputStream;
     }
 
     private void generatePlainText() {
@@ -85,8 +91,10 @@ public class KMAScheduleGenerator {
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);
         Document document = new Document(pdfDocument);
 
-        final String FONT_REGULAR = getClass().getClassLoader().getResource("font/Open_Sans/OpenSans-Regular.ttf").getPath();
-        final String FONT_BOLD = getClass().getClassLoader().getResource("font/Open_Sans/OpenSans-Bold.ttf").getPath();
+        final String FONT_REGULAR = Objects.requireNonNull(getClass().getClassLoader().getResource(FONT_REGULAR_PATH))
+                .getPath();
+        final String FONT_BOLD = Objects.requireNonNull(getClass().getClassLoader().getResource(FONT_BOLD_PATH))
+                .getPath();
 
         PdfFont fontBold = PdfFontFactory.createFont(FONT_BOLD, PdfEncodings.IDENTITY_H);
         PdfFont fontRegular = PdfFontFactory.createFont(FONT_REGULAR, PdfEncodings.IDENTITY_H);
@@ -117,7 +125,7 @@ public class KMAScheduleGenerator {
                     String classroom = subjectPeriod.getClassroom() + " ";
                     String subject = subjectPeriod.getSubject();
 
-                    Color textColor = PeriodRangeTextColor.getTextColor(range).getColor();
+                    Color textColor = Objects.requireNonNull(PeriodRangeTextColor.getTextColor(range)).getColor();
                     if (textColor == null) {
                         textColor = new DeviceRgb(0, 0, 0);
                     }
@@ -139,7 +147,10 @@ public class KMAScheduleGenerator {
     }
 
     private void generateExcel() throws IOException {
-        File file = new File(getClass().getClassLoader().getResource("Template.xlsx").getFile());
+        File file = new File(
+                Objects.requireNonNull(getClass().getClassLoader().getResource("Template.xlsx"))
+                        .getFile()
+        );
         XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(file));
         XSSFCreationHelper factory = workbook.getCreationHelper();
 
@@ -189,8 +200,6 @@ public class KMAScheduleGenerator {
         workbook.write(outputStream);
     }
 
-    public void setOutputStream(OutputStream outputStream) {
-        this.outputStream = outputStream;
-    }
+
 
 }

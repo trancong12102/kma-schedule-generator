@@ -6,13 +6,14 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.FormElement;
+import org.lonewolf2110.utils.interfaces.IKMASoupClient;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-public class KMASoupClient {
+public class KMASoupClient implements IKMASoupClient {
     private static final String LOGIN_PAGE_TITLE = ".: Đăng nhập :.";
     private static final String HOMEPAGE_TITLE = ".: Hệ thống đăng ký học :.";
 
@@ -23,6 +24,7 @@ public class KMASoupClient {
     private InputStream inputStream;
     private String semester;
 
+    @Override
     public int login(String username, String password) {
         try {
             Document doc = Jsoup
@@ -60,6 +62,7 @@ public class KMASoupClient {
         return HttpServletResponse.SC_OK;
     }
 
+    @Override
     public int getScheduleAsStream() {
         try {
             Document doc = Jsoup
@@ -90,6 +93,16 @@ public class KMASoupClient {
         return HttpServletResponse.SC_OK;
     }
 
+    @Override
+    public InputStream getInputStream() {
+        return inputStream;
+    }
+
+    @Override
+    public String getSemester() {
+        return semester;
+    }
+
     private void setKeyVal(List<Connection.KeyVal> formData, String key, String value) {
         for (Connection.KeyVal keyVal : formData) {
             if (keyVal.key().equals(key)) {
@@ -109,11 +122,4 @@ public class KMASoupClient {
         return null;
     }
 
-    public InputStream getInputStream() {
-        return inputStream;
-    }
-
-    public String getSemester() {
-        return semester;
-    }
 }

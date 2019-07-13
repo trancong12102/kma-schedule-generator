@@ -8,6 +8,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.lonewolf2110.enums.Weekday;
 import org.lonewolf2110.models.*;
+import org.lonewolf2110.utils.interfaces.IKMAScheduleReader;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +17,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KMAScheduleReader implements AutoCloseable {
+public class KMAScheduleReader implements IKMAScheduleReader, AutoCloseable {
     private Workbook workbook;
     private List<SubjectPeriod> subjectPeriodList;
     private DateRange termRange;
@@ -30,8 +31,46 @@ public class KMAScheduleReader implements AutoCloseable {
 
     }
 
-    public List<SubjectPeriod> getSubjectPeriodList() {
-        return subjectPeriodList;
+    @Override
+    public List<SheetData> getWorkbookData() {
+        this.readPeriodList();
+        List<ClassWeek> classWeekList = this.getClassWeekList();
+
+        List<SheetData> workbookData = new ArrayList<>();
+        classWeekList.add(new ClassWeek());
+
+        for (int week = 0; week < classWeekList.size() - 1; week++) {
+            int startWeek = week;
+
+            while (classWeekList.get(week).isEqual(classWeekList.get(week + 1))) {
+                week++;
+            }
+
+            LocalDate startDate = termRange.getStart().plusDays(startWeek * 7);
+            LocalDate endDate = termRange.getStart().plusDays(week * 7 + 6);
+
+            SheetData sheetData = new SheetData(new DateRange(startDate, endDate), classWeekList.get(startWeek));
+
+            if (sheetData.isEmpty()) {
+                continue;
+            }
+
+            workbookData.add(sheetData);
+        }
+
+        return workbookData;
+    }
+
+    @Override
+    public void read(InputStream inputStream) throws IOException {
+        pfs = new POIFSFileSystem(inputStream);
+        this.workbook = new HSSFWorkbook(pfs);
+    }
+
+    @Override
+    public void close() throws Exception {
+        workbook.close();
+        pfs.close();
     }
 
     private List<ClassWeek> getClassWeekList() {
@@ -63,35 +102,6 @@ public class KMAScheduleReader implements AutoCloseable {
         }
 
         return classWeekList;
-    }
-
-    public List<SheetData> getWorkbookData() {
-        this.readPeriodList();
-        List<ClassWeek> classWeekList = this.getClassWeekList();
-
-        List<SheetData> workbookData = new ArrayList<>();
-        classWeekList.add(new ClassWeek());
-
-        for (int week = 0; week < classWeekList.size() - 1; week++) {
-            int startWeek = week;
-
-            while (classWeekList.get(week).isEqual(classWeekList.get(week + 1))) {
-                week++;
-            }
-
-            LocalDate startDate = termRange.getStart().plusDays(startWeek * 7);
-            LocalDate endDate = termRange.getStart().plusDays(week * 7 + 6);
-
-            SheetData sheetData = new SheetData(new DateRange(startDate, endDate), classWeekList.get(startWeek));
-
-            if (sheetData.isEmpty()) {
-                continue;
-            }
-
-            workbookData.add(sheetData);
-        }
-
-        return workbookData;
     }
 
     private void readPeriodList() {
@@ -135,16 +145,5 @@ public class KMAScheduleReader implements AutoCloseable {
 
         termRange.setStart(LocalDateUtils.getStartDayOfWeek(termRange.getStart()));
         termRange.setEnd(LocalDateUtils.getEndDayOfWeek(termRange.getEnd()));
-    }
-
-    public void read(InputStream inputStream) throws IOException {
-        pfs = new POIFSFileSystem(inputStream);
-        this.workbook = new HSSFWorkbook(pfs);
-    }
-
-    @Override
-    public void close() throws Exception {
-        workbook.close();
-        pfs.close();
     }
 }
