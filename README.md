@@ -30,22 +30,22 @@ There are some major updates</p>
 <h1 id="creator">Creator</h1>
 <p><strong>Trần Công</strong></p>
 <ul>
-<li><a href="https://facebook.com/nopain.2110">Facebook</a></li>
-<li><a href="https://twitter.com/nopain2110">Twitter</a></li>
-<li><a href="https://github.com/nopain2110">Github</a></li>
+<li><a href="https://facebook.com/nopain.2110" target="_blank">Facebook</a></li>
+<li><a href="https://twitter.com/nopain2110" target="_blank">Twitter</a></li>
+<li><a href="https://github.com/nopain2110" target="_blank">Github</a></li>
 </ul>
 <h1 id="thanks">Thanks</h1>
-<p><strong><a href="http://getbootstrap.com/">Bootstrap</a></strong><br>
-<strong><a href="https://sweetalert2.github.io/">SweetAlert2</a></strong><br>
-<strong><a href="https://daneden.github.io/animate.css/">Animate.css</a></strong><br>
-<strong><a href="https://uicookies.com/">uiCookies</a></strong><br>
-<strong><a href="https://github.com/axios/axios">Axios</a></strong><br>
-<strong><a href="https://www.google.com/fonts/">Google Fonts</a></strong><br>
-<strong><a href="https://fontawesome.com/">FontAwesome</a></strong><br>
-<strong><a href="http://htmlunit.sourceforge.net/">HtmlUnit</a></strong><br>
-<strong><a href="https://jsoup.org/">JSoup</a></strong><br>
-<strong><a href="https://poi.apache.org/">Apache POI</a></strong><br>
-<strong><a href="https://itextpdf.com/en">iText</a></strong><br>
-<strong><a href="https://github.com/google/gson">gson</a></strong><br>
-<strong><a href="https://developers.google.com/drive/">Google Drive API</a></strong></p>
+<p><strong><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></strong><br>
+<strong><a href="https://sweetalert2.github.io/" target="_blank">SweetAlert2</a></strong><br>
+<strong><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a></strong><br>
+<strong><a href="https://uicookies.com/" target="_blank">uiCookies</a></strong><br>
+<strong><a href="https://github.com/axios/axios" target="_blank">Axios</a></strong><br>
+<strong><a href="https://www.google.com/fonts/" target="_blank">Google Fonts</a></strong><br>
+<strong><a href="https://fontawesome.com/" target="_blank">FontAwesome</a></strong><br>
+<strong><a href="http://htmlunit.sourceforge.net/" target="_blank">HtmlUnit</a></strong><br>
+<strong><a href="https://jsoup.org/" target="_blank">JSoup</a></strong><br>
+<strong><a href="https://poi.apache.org/" target="_blank">Apache POI</a></strong><br>
+<strong><a href="https://itextpdf.com/en" target="_blank">iText</a></strong><br>
+<strong><a href="https://github.com/google/gson" target="_blank">gson</a></strong><br>
+<strong><a href="https://developers.google.com/drive/" target="_blank">Google Drive API</a></strong></p>
 
