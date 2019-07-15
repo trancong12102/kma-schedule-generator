@@ -4,11 +4,11 @@
     <display-name>KMA Schedule Generator</display-name>
     <servlet>
         <servlet-name>ScheduleGeneratingServlet</servlet-name>
-        <servlet-class>org.lonewolf2110.servlets.ScheduleGeneratingServlet</servlet-class>
+        <servlet-class>org.lonewolf2110.kma.schedule.servlets.GeneratingServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ScheduleCleanServlet</servlet-name>
-        <servlet-class>org.lonewolf2110.servlets.ScheduleCleanServlet</servlet-class>
+        <servlet-class>org.lonewolf2110.kma.schedule.servlets.CleanServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ScheduleGeneratingServlet</servlet-name>

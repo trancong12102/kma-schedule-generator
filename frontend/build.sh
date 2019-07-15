@@ -15,7 +15,7 @@ NC='\033[0m'
 echo -e "${BLUE}============================================${NC}"
 echo -e "${LIGHT_BLUE}BUILDING JAVASCRIPT FILES${NC}"
 cd $JS_DIR
-npm run build
+yarn build
 
 
 echo -e "${BLUE}============================================${NC}"

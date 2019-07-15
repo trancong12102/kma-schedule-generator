@@ -144,7 +144,7 @@ function handleAjaxSuccess(response) {
       setTimeout(() => {
         const url = response.data.webViewLink;
         window.open(url, "_blank");
-      }, 1000);
+      }, 500);
     });
   });
 }
@@ -200,7 +200,7 @@ function $q(selector) {
 function addAnimation(element, animation, hover = false) {
   if (hover) {
     element.classList.forEach(value => {
-      if (value.startsWith("pb_animated")) {
+      if (value.startsWith("pb_animated_")) {
         element.classList.remove(value);
       }
     });
@@ -233,13 +233,17 @@ function handleAppearAnimation() {
       if (value === "pb_hover") {
         hover = true;
       }
+
     });
 
     addAnimation(element, animation);
+
     if (hover) {
       element.addEventListener("mouseover", () => {
         addAnimation(element, animation, true);
       })
     }
+
   });
 }
+
