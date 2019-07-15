@@ -30,9 +30,9 @@ There are some major updates</p>
 <h1 id="creator">Creator</h1>
 <p><strong>Trần Công</strong></p>
 <ul>
-<li><a href="https://facebook.com/lonewolf.2110">Facebook</a></li>
-<li><a href="https://twitter.com/lonewolft2110">Twitter</a></li>
-<li><a href="https://github.com/lonewolf2110">Github</a></li>
+<li><a href="https://facebook.com/nopain.2110">Facebook</a></li>
+<li><a href="https://twitter.com/nopain2110">Twitter</a></li>
+<li><a href="https://github.com/nopain2110">Github</a></li>
 </ul>
 <h1 id="thanks">Thanks</h1>
 <p><strong><a href="http://getbootstrap.com/">Bootstrap</a></strong><br>
