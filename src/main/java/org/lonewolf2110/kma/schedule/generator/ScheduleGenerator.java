@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.generator;
 
 import com.itextpdf.io.font.PdfEncodings;
 import com.itextpdf.kernel.colors.Color;
@@ -12,13 +12,13 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.*;
-import org.lonewolf2110.kma.schedule.enums.FileType;
-import org.lonewolf2110.kma.schedule.enums.PeriodRangeiTextColor;
-import org.lonewolf2110.kma.schedule.enums.Weekday;
-import org.lonewolf2110.kma.schedule.models.DateRange;
-import org.lonewolf2110.kma.schedule.models.PeriodRange;
-import org.lonewolf2110.kma.schedule.models.SheetData;
-import org.lonewolf2110.kma.schedule.models.SubjectStage;
+import org.lonewolf2110.kma.schedule.data.enums.FileType;
+import org.lonewolf2110.kma.schedule.data.enums.PeriodRangeiTextColor;
+import org.lonewolf2110.kma.schedule.data.enums.Weekday;
+import org.lonewolf2110.kma.schedule.data.range.DateRange;
+import org.lonewolf2110.kma.schedule.data.range.PeriodRange;
+import org.lonewolf2110.kma.schedule.data.SubjectStage;
+import org.lonewolf2110.kma.schedule.data.SheetData;
 
 import java.io.*;
 import java.time.format.DateTimeFormatter;

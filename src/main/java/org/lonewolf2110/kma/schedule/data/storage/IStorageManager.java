@@ -1,7 +1,7 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.data.storage;
 
 import com.google.api.services.drive.model.File;
-import org.lonewolf2110.kma.schedule.enums.FileType;
+import org.lonewolf2110.kma.schedule.data.enums.FileType;
 
 import java.io.IOException;
 import java.io.InputStream;

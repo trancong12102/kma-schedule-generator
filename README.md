@@ -39,10 +39,8 @@ There are some major updates</p>
 <strong><a href="https://sweetalert2.github.io/">SweetAlert2</a></strong><br>
 <strong><a href="https://daneden.github.io/animate.css/">Animate.css</a></strong><br>
 <strong><a href="https://uicookies.com/">uiCookies</a></strong><br>
-<strong><a href="https://github.com/axios/axios">Axios</a></strong><br>
 <strong><a href="https://www.google.com/fonts/">Google Fonts</a></strong><br>
 <strong><a href="https://fontawesome.com/">FontAwesome</a></strong><br>
-<strong><a href="http://htmlunit.sourceforge.net/">HtmlUnit</a></strong><br>
 <strong><a href="https://jsoup.org/">JSoup</a></strong><br>
 <strong><a href="https://poi.apache.org/">Apache POI</a></strong><br>
 <strong><a href="https://itextpdf.com/en">iText</a></strong><br>

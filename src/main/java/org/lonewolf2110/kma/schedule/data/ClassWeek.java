@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.models;
+package org.lonewolf2110.kma.schedule.data;
 
 import java.util.ArrayList;
 import java.util.Collections;

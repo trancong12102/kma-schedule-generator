@@ -16,6 +16,7 @@ echo -e "${BLUE}============================================${NC}"
 echo -e "${LIGHT_BLUE}BUILDING JAVASCRIPT FILES${NC}"
 cd $JS_DIR
 yarn build
+yarn min
 
 
 echo -e "${BLUE}============================================${NC}"
@@ -48,7 +49,7 @@ rsync -rv --exclude=**/*.map $BOOTSTRAP_CSS $BOOTSTRAP_CSS_DIST
 
 echo -e "${BLUE}============================================${NC}"
 echo -e "${LIGHT_BLUE}SYNCING MAIN JS${NC}"
-MAIN_JS="$SCRIPTPATH/assets/js/dist/main.js"
+MAIN_JS="$SCRIPTPATH/assets/js/dist/main.min.js"
 MAIN_JS_DIST="$WEBAPP_DIR/assets/js/dist/main.js"
 rsync -rv $MAIN_JS $MAIN_JS_DIST
 

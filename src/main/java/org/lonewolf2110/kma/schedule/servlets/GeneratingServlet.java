@@ -3,14 +3,14 @@ package org.lonewolf2110.kma.schedule.servlets;
 import com.google.common.io.ByteSource;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
-import org.lonewolf2110.kma.schedule.enties.RequestEntity;
-import org.lonewolf2110.kma.schedule.enties.ResponseEntity;
-import org.lonewolf2110.kma.schedule.enums.FileType;
-import org.lonewolf2110.kma.schedule.models.SheetData;
-import org.lonewolf2110.kma.schedule.tools.ScheduleGenerator;
-import org.lonewolf2110.kma.schedule.tools.ScheduleReader;
-import org.lonewolf2110.kma.schedule.tools.SoupClient;
-import org.lonewolf2110.kma.schedule.tools.StorageManager;
+import org.lonewolf2110.kma.schedule.servlets.enties.RequestEntity;
+import org.lonewolf2110.kma.schedule.servlets.enties.ResponseEntity;
+import org.lonewolf2110.kma.schedule.data.enums.FileType;
+import org.lonewolf2110.kma.schedule.data.SheetData;
+import org.lonewolf2110.kma.schedule.generator.ScheduleGenerator;
+import org.lonewolf2110.kma.schedule.reader.ScheduleReader;
+import org.lonewolf2110.kma.schedule.client.SoupClient;
+import org.lonewolf2110.kma.schedule.data.storage.StorageManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -60,7 +60,7 @@ public class GeneratingServlet extends HttpServlet {
                 return;
             }
 
-            kStatus = client.getScheduleAsStream();
+            kStatus = client.readScheduleAsStream();
 
             if (kStatus != HttpServletResponse.SC_OK) {
                 response.sendError(kStatus);
@@ -87,7 +87,7 @@ public class GeneratingServlet extends HttpServlet {
 
         try (ScheduleReader reader = new ScheduleReader()) {
             reader.read(inputStream);
-            workbookData = reader.parseWorkbookData();
+            workbookData = reader.getWorkbookData();
             inputStream.close();
         } catch (Exception e) {
             e.printStackTrace();

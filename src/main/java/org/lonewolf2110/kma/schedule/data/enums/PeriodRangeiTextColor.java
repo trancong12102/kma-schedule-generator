@@ -1,7 +1,7 @@
-package org.lonewolf2110.kma.schedule.enums;
+package org.lonewolf2110.kma.schedule.data.enums;
 
 import com.itextpdf.kernel.colors.DeviceRgb;
-import org.lonewolf2110.kma.schedule.models.PeriodRange;
+import org.lonewolf2110.kma.schedule.data.range.PeriodRange;
 
 public enum PeriodRangeiTextColor {
     CP1(1, new DeviceRgb(22, 160, 133)),

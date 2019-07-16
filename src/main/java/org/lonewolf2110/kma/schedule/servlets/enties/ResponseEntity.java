@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.enties;
+package org.lonewolf2110.kma.schedule.servlets.enties;
 
 public class ResponseEntity {
     private String webViewLink;

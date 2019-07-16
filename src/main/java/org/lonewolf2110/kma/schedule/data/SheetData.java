@@ -1,6 +1,7 @@
-package org.lonewolf2110.kma.schedule.models;
+package org.lonewolf2110.kma.schedule.data;
 
-import org.lonewolf2110.kma.schedule.enums.Weekday;
+import org.lonewolf2110.kma.schedule.data.enums.Weekday;
+import org.lonewolf2110.kma.schedule.data.range.DateRange;
 
 import java.util.ArrayList;
 import java.util.List;

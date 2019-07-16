@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.enums;
+package org.lonewolf2110.kma.schedule.data.enums;
 
 public enum Weekday {
     MONDAY(2, "Thứ hai"),

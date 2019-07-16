@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.client;
 
 import com.google.common.io.ByteSource;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -62,7 +62,7 @@ public class SoupClient implements IClient {
     }
 
     @Override
-    public int getScheduleAsStream() {
+    public int readScheduleAsStream() {
         try {
             Document doc = Jsoup
                     .connect(SCHEDULE_URL)
@@ -93,6 +93,7 @@ public class SoupClient implements IClient {
         return HttpServletResponse.SC_OK;
     }
 
+    @Override
     public InputStream getInputStream() {
         return inputStream;
     }

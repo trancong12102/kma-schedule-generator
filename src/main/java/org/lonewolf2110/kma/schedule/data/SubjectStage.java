@@ -1,7 +1,9 @@
-package org.lonewolf2110.kma.schedule.models;
+package org.lonewolf2110.kma.schedule.data;
 
-import org.lonewolf2110.kma.schedule.enums.ClassPeriod;
-import org.lonewolf2110.kma.schedule.enums.Weekday;
+import org.lonewolf2110.kma.schedule.data.enums.ClassPeriod;
+import org.lonewolf2110.kma.schedule.data.enums.Weekday;
+import org.lonewolf2110.kma.schedule.data.range.DateRange;
+import org.lonewolf2110.kma.schedule.data.range.PeriodRange;
 
 public class SubjectStage implements Comparable<SubjectStage> {
     private String subject, classroom;

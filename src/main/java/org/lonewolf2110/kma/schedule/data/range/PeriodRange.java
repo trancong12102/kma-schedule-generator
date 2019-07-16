@@ -1,6 +1,6 @@
-package org.lonewolf2110.kma.schedule.models;
+package org.lonewolf2110.kma.schedule.data.range;
 
-import org.lonewolf2110.kma.schedule.enums.ClassPeriod;
+import org.lonewolf2110.kma.schedule.data.enums.ClassPeriod;
 
 import java.util.ArrayList;
 import java.util.List;

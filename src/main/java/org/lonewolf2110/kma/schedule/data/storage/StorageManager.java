@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.data.storage;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
@@ -16,7 +16,7 @@ import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
 import com.google.api.services.drive.model.Permission;
-import org.lonewolf2110.kma.schedule.enums.FileType;
+import org.lonewolf2110.kma.schedule.data.enums.FileType;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package org.lonewolf2110.kma.schedule.utils;
 
-import org.lonewolf2110.kma.schedule.models.DateRange;
+import org.lonewolf2110.kma.schedule.data.range.DateRange;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

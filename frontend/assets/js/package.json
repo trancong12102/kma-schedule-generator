@@ -5,7 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "build": "browserify src/main.js -o dist/main.js",
-    "watch": "watchify src/main.js -o dist/main.js -v"
+    "watch": "watchify src/main.js -o dist/main.js -v",
+    "bmin": "minify dist/main.js -d dist/main.bmin.js",
+    "min": "uglifyjs dist/main.js -o dist/main.min.js -c -m"
   },
   "browserify": {
     "transform": [
@@ -32,6 +34,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "sweetalert2": "^8.13.3"
+    "sweetalert2": "^8.13.3",
+    "uglify-js": "^3.6.0"
   }
 }

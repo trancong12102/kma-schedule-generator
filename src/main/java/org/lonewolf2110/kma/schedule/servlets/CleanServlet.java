@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class CleanServlet extends HttpServlet {
-    private static final String TEMP_DIRECTORY_PATH = "gtemp";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

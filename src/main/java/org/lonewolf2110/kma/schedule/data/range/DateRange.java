@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.models;
+package org.lonewolf2110.kma.schedule.data.range;
 
 import org.lonewolf2110.kma.schedule.utils.StringUtils;
 

@@ -3,7 +3,6 @@
 */
 
 import Swal from 'sweetalert2'
-import axios from 'axios'
 
 //-----------------------------------------------------------------------------
 // event listener
@@ -75,46 +74,49 @@ $("#login-form").handle("submit", (e) => {
       })
     },
     preConfirm: (method) => {
-      let axiosData = {
+      let url = 'schedule';
+
+      let data = {
         method: method,
-        url: 'schedule',
-        data: {
+        body: JSON.stringify({
           username: username,
           password: password
+        }),
+        headers:{
+          'Content-Type': 'application/json'
         }
       };
 
       if (method === "get") {
-        axiosData = {
-          method: method,
-          url: `schedule?username=${username}`
+        url = `schedule?username=${username}`;
+        data = {
+          method: method
         }
       }
 
-      return axios(axiosData)
+      return fetch(url, data)
         .then(response => {
-
           return response;
         })
         .catch(error => {
-
-          return error.response;
-        })
+          console.log(error);
+          handleAjaxFailed(0);
+        });
     },
   }).then(result => {
     if (result.value) {
       const response = result.value;
+      const status = response.status;
 
-      if (response.status === 204) {
-        handleAjaxWarning();
+      if (status !== 200) {
+        handleAjaxFailed(status);
         return;
       }
 
-      if (response.status === 200) {
-        handleAjaxSuccess(response);
-      } else {
-        handleAjaxFailed(response);
-      }
+      response.json()
+        .then(body => {
+          handleAjaxSuccess(body.webViewLink);
+        })
     }
   });
 
@@ -132,7 +134,7 @@ function handleAjaxWarning() {
   });
 }
 
-function handleAjaxSuccess(response) {
+function handleAjaxSuccess(webViewLink) {
   Swal.fire({
     type: 'success',
     title: 'Thành công',
@@ -142,18 +144,25 @@ function handleAjaxSuccess(response) {
   }).then(() => {
     new Promise(() => {
       setTimeout(() => {
-        const url = response.data.webViewLink;
-        window.open(url, "_blank");
+        window.open(webViewLink, "_blank");
       }, 500);
     });
   });
 }
 
-function handleAjaxFailed(response) {
-  const status = response.status;
+function handleAjaxFailed(status) {
+
+  if (status === 204) {
+    handleAjaxWarning();
+    return;
+  }
+
   let text = 'Lỗi không xác định!<br>Vui lòng thử lại sau';
 
   switch (status) {
+    case 0:
+      text = 'Lỗi kết nối<br>Hãy kiểm tra lại kết đường truyền của bạn';
+      break;
     case 400:
       text = 'Bad request';
       break;

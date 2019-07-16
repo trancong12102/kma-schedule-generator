@@ -10,6 +10,7 @@
         <servlet-name>ScheduleCleanServlet</servlet-name>
         <servlet-class>org.lonewolf2110.kma.schedule.servlets.CleanServlet</servlet-class>
     </servlet>
+    <!-- Mapping -->
     <servlet-mapping>
         <servlet-name>ScheduleGeneratingServlet</servlet-name>
         <url-pattern>/schedule</url-pattern>

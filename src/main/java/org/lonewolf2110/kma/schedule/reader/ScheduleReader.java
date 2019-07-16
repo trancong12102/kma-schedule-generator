@@ -1,4 +1,4 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.reader;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
@@ -6,8 +6,12 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.lonewolf2110.kma.schedule.enums.Weekday;
-import org.lonewolf2110.kma.schedule.models.*;
+import org.lonewolf2110.kma.schedule.data.ClassWeek;
+import org.lonewolf2110.kma.schedule.data.SheetData;
+import org.lonewolf2110.kma.schedule.data.SubjectStage;
+import org.lonewolf2110.kma.schedule.data.range.DateRange;
+import org.lonewolf2110.kma.schedule.data.range.PeriodRange;
+import org.lonewolf2110.kma.schedule.data.enums.Weekday;
 import org.lonewolf2110.kma.schedule.utils.DateUtils;
 
 import java.io.IOException;
@@ -39,7 +43,7 @@ public class ScheduleReader implements IReader, AutoCloseable {
     }
 
     @Override
-    public List<SheetData> parseWorkbookData() {
+    public List<SheetData> getWorkbookData() {
         this.readPeriodList();
         List<ClassWeek> classWeekList = this.getClassWeekList();
 

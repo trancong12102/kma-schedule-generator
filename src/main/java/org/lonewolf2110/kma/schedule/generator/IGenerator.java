@@ -1,6 +1,6 @@
-package org.lonewolf2110.kma.schedule.tools;
+package org.lonewolf2110.kma.schedule.generator;
 
-import org.lonewolf2110.kma.schedule.enums.FileType;
+import org.lonewolf2110.kma.schedule.data.enums.FileType;
 
 import java.io.IOException;
 import java.io.OutputStream;
