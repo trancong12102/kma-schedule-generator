@@ -6,7 +6,6 @@
   "scripts": {
     "build": "browserify src/main.js -o dist/main.js",
     "watch": "watchify src/main.js -o dist/main.js -v",
-    "bmin": "minify dist/main.js -d dist/main.bmin.js",
     "min": "uglifyjs dist/main.js -o dist/main.min.js -c -m"
   },
   "browserify": {

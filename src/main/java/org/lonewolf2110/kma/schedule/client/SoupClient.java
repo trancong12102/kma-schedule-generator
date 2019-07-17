@@ -62,7 +62,7 @@ public class SoupClient implements IClient {
     }
 
     @Override
-    public int readScheduleAsStream() {
+    public int getScheduleAsStream() {
         try {
             Document doc = Jsoup
                     .connect(SCHEDULE_URL)

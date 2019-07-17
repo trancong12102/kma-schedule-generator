@@ -5,7 +5,7 @@ import java.io.InputStream;
 public interface IClient {
     int login(String username, String password);
 
-    int readScheduleAsStream();
+    int getScheduleAsStream();
 
     InputStream getInputStream();
 }

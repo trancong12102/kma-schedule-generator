@@ -60,7 +60,7 @@ public class GeneratingServlet extends HttpServlet {
                 return;
             }
 
-            kStatus = client.readScheduleAsStream();
+            kStatus = client.getScheduleAsStream();
 
             if (kStatus != HttpServletResponse.SC_OK) {
                 response.sendError(kStatus);
