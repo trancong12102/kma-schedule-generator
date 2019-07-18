@@ -2,39 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a253d2fe-3270-4006-b539-1909d3fedf25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dist/main.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dist/main.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enties/RequestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/enties/RequestEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enties/ResponseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/enties/ResponseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enums/ClassPeriod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/enums/ClassPeriod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enums/FileType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/enums/FileType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enums/PeriodRangeiTextColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/enums/PeriodRangeiTextColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enums/ResponseStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/enums/Weekday.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/enums/Weekday.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/models/ClassWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/ClassWeek.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/models/DateRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/range/DateRange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/models/PeriodRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/range/PeriodRange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/models/SheetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/SheetData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/models/SubjectStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/SubjectStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/CleanServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/CleanServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/GeneratingServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/servlets/GeneratingServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/IClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/client/IClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/IGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/generator/IGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/IReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/reader/IReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/IStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/storage/IStorageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/ScheduleGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/generator/ScheduleGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/ScheduleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/reader/ScheduleReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/SoupClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/client/SoupClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/tools/StorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/data/storage/StorageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/org/lonewolf2110/kma/schedule/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/assets/js/dist/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/webapp/assets/js/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/landing-2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/landing-2.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1369">
-              <caret line="142" column="30" lean-forward="true" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
+            <state relative-caret-position="234">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -59,10 +30,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/scss/landing-2.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3069">
+            <state relative-caret-position="530">
               <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
@@ -72,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
-              <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+              <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -92,8 +63,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/assets/scss/landing-2.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/src/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -197,14 +168,16 @@
       <workItem from="1563175368756" duration="621000" />
       <workItem from="1563273390451" duration="680000" />
       <workItem from="1563283660270" duration="3615000" />
+      <workItem from="1563435551456" duration="679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23757000" />
+    <option name="totallyTimeSpent" value="24436000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-3" width="1920" height="1038" extended-state="6" />
+    <frame x="0" y="-3" width="1920" height="1030" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24986738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -236,27 +209,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/scss/landing-2.scss">
+    <entry file="file://$PROJECT_DIR$/assets/js/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3069">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="234">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
-          <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+          <caret line="46" column="39" lean-forward="true" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/js/src/main.js">
+    <entry file="file://$PROJECT_DIR$/assets/scss/landing-2.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1369">
-          <caret line="142" column="30" lean-forward="true" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="530">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
         </state>
       </provider>
     </entry>

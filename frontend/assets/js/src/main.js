@@ -82,7 +82,7 @@ $("#login-form").handle("submit", (e) => {
           username: username,
           password: password
         }),
-        headers:{
+        headers: {
           'Content-Type': 'application/json'
         }
       };
@@ -142,11 +142,9 @@ function handleAjaxSuccess(webViewLink) {
     confirmButtonColor: COLOR_PRIMARY,
     confirmButtonText: 'Đóng',
   }).then(() => {
-    new Promise(() => {
-      setTimeout(() => {
-        window.open(webViewLink, "_blank");
-      }, 500);
-    });
+    setTimeout(() => {
+      window.open(webViewLink, "_blank");
+    }, 500);
   });
 }
 

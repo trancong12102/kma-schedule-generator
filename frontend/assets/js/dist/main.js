@@ -2954,11 +2954,9 @@ function handleAjaxSuccess(webViewLink) {
     confirmButtonColor: COLOR_PRIMARY,
     confirmButtonText: 'Đóng'
   }).then(function () {
-    new Promise(function () {
-      setTimeout(function () {
-        window.open(webViewLink, "_blank");
-      }, 500);
-    });
+    setTimeout(function () {
+      window.open(webViewLink, "_blank");
+    }, 500);
   });
 }
 
