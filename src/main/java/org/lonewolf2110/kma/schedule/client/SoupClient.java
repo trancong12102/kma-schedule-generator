@@ -17,8 +17,8 @@ public class SoupClient implements IClient {
     private static final String LOGIN_PAGE_TITLE = ".: Đăng nhập :.";
     private static final String HOMEPAGE_TITLE = ".: Hệ thống đăng ký học :.";
 
-    private static final String LOGIN_URL = "http://115.146.127.72/CMCSoft.IU.Web.Info/Login.aspx";
-    private static final String SCHEDULE_URL = "http://115.146.127.72/CMCSoft.IU.Web.Info/Reports/Form/StudentTimeTable.aspx";
+    private static final String LOGIN_URL = "http://qldt.actvn.edu.vn/CMCSoft.IU.Web.info/Login.aspx";
+    private static final String SCHEDULE_URL = "http://qldt.actvn.edu.vn/CMCSoft.IU.Web.Info/Reports/Form/StudentTimeTable.aspx";
 
     private Map<String, String> cookies;
     private InputStream inputStream;
