@@ -56,6 +56,7 @@ public class ScheduleGenerator implements IGenerator {
         this.outputStream = outputStream;
     }
 
+    @Deprecated
     private void generatePlainText() {
         PrintWriter printWriter = new PrintWriter(outputStream);
         String pattern = "dd/MM/yyyy";
@@ -87,6 +88,7 @@ public class ScheduleGenerator implements IGenerator {
         printWriter.close();
     }
 
+    @Deprecated
     private void generatePDF() throws IOException {
         PdfWriter pdfWriter = new PdfWriter(outputStream);
         PdfDocument pdfDocument = new PdfDocument(pdfWriter);

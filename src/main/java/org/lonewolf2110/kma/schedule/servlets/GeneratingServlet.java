@@ -43,6 +43,8 @@ public class GeneratingServlet extends HttpServlet {
             return;
         }
 
+        System.out.println(username);
+
         //-----------------------------------------------------------------------------
         // Get workbook data from KMA schedule page
 
@@ -131,26 +133,25 @@ public class GeneratingServlet extends HttpServlet {
         String filenameWithoutExtension = String.format("HK%s", semester);
         storage.deleteFiles(parentId, filenameWithoutExtension);
 
-        for (FileType fileType : FileType.values()) {
-            start = Instant.now();
+        FileType fileType = FileType.EXCEL;
+        start = Instant.now();
 
-            String gFileName = String.format("%s.%s", filenameWithoutExtension, fileType.getFileExtension());
+        String gFileName = String.format("%s.%s", filenameWithoutExtension, fileType.getFileExtension());
 
-            try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
-                generator.setOutputStream(outputStream);
-                generator.generate(fileType);
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            generator.setOutputStream(outputStream);
+            generator.generate(fileType);
 
-                inputStream = ByteSource.wrap(outputStream.toByteArray()).openStream();
-                storage.uploadFile(inputStream, parentId, gFileName, fileType);
-            } catch (Exception e) {
-                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                return;
-            }
-
-            end = Instant.now();
-            duration = Duration.between(start, end);
-            System.out.println("Generated and uploaded file " + gFileName + " in " + duration.toMillis() + " milliseconds");
+            inputStream = ByteSource.wrap(outputStream.toByteArray()).openStream();
+            storage.uploadFile(inputStream, parentId, gFileName, fileType);
+        } catch (Exception e) {
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            return;
         }
+
+        end = Instant.now();
+        duration = Duration.between(start, end);
+        System.out.println("Generated and uploaded file " + gFileName + " in " + duration.toMillis() + " milliseconds");
 
         System.out.println("Generate and upload file [OK]");
 
